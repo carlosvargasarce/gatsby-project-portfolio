@@ -2,10 +2,10 @@ import React from "react";
 import Header from '../Header';
 import Footer from '../Footer';
 import { useStaticQuery, graphql } from "gatsby";
-import PageTransition from 'gatsby-plugin-page-transitions'
+import PageTransition from 'gatsby-plugin-page-transitions';
+import styles from './style.module.scss';
 
 export default ({ children }) => {
-  console.log(children);
   const data = useStaticQuery(
     graphql`
       query {
@@ -23,7 +23,7 @@ export default ({ children }) => {
         <PageTransition>
           {children}
         </PageTransition>
-      <Footer />
+      {/*<Footer />*/}
     </div>
   )
 }
