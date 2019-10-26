@@ -1,45 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { motion, useCycle } from "framer-motion";
+import { useDimensions } from "../../utils/use-dimensions";
 import styles from "./style.module.scss";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
+import classnames from 'classnames';
 import { Link } from "gatsby";
+import { MenuToggle } from "../MenuToggle";
+import { Navigation } from "../Navigation"
+
+const sidebar = {
+  open: (height = 1000) => ({
+    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2
+    }
+  }),
+  closed: {
+    clipPath: "circle(30px at 240px 60px)",
+    transition: {
+      delay: 0.5,
+      type: "spring",
+      stiffness: 400,
+      damping: 40
+    }
+  }
+};
 
 function Header ({ siteTitle }) {
-  const [isExpanded, toggleExpansion] = useState(false);
-
-  const stylesLocal = {
-    menuButton: {
-      height: '52px',
-      width: '52px',
-      display:'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      cursor: 'pointer',
-      padding: '4px',
-      float: 'right',
-    },
-    line: {
-      height: '3px',
-      width: '40px',
-      background: '#262626',
-      transition: 'all 0.2s ease',
-    },
-    lineTop: {
-      transform: isExpanded ? 'rotate(-45deg)': 'none',
-      transformOrigin: 'bottom right',
-      marginBottom: '11.2px',
-    },
-    lineMiddle: {
-      opacity: isExpanded ? 0: 1,
-      transform: isExpanded ? 'translateX(16px)': 'none',
-    },
-    lineBottom: {
-      transform: isExpanded ? 'translateX(-2px) rotate(45deg)': 'none',
-      transformOrigin: 'bottom right',
-      marginTop: '11.2px',
-    },       
-  }
+  // const [isExpanded, toggleExpansion] = useState(false);
+  const [isOpen, toggleOpen] = useCycle(false, true);
+  const containerRef = useRef(null);
+  const { height } = useDimensions(containerRef);
 
   const data = useStaticQuery(graphql`
     query {
@@ -55,10 +49,6 @@ function Header ({ siteTitle }) {
     }
   `)
 
-  const handleMenuClick = () => {
-    toggleExpansion(!isExpanded);
-  }
-
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer}>
@@ -66,23 +56,31 @@ function Header ({ siteTitle }) {
           <Img
             fixed={data.file.childImageSharp.fixed}
             alt="Gatsby Docs are awesome"
-            //fadeIn={false}
           />
         </Link>
       </div>
-      <nav>
+      <nav className={styles.topNavigation}>
         <Link activeClassName={styles.activeLink} to="/">WHOLE</Link>
         <Link activeClassName={styles.activeLink} to="/who">WHO</Link>
         <Link activeClassName={styles.activeLink} to="/work">WORK</Link>
-        <Link activeClassName={styles.activeLink} to="/what">WHAT</Link>
+        <Link activeClassName={styles.activeLink} to="/wlog">WLOG</Link>
         <Link activeClassName={styles.activeLink} to="/woof" className={styles.contact}>WOOF</Link>
       </nav>
-      <div style={stylesLocal.menuButton} className={styles.menuButton}
-        onClick={handleMenuClick}>
-        <div style={{...stylesLocal.line,...stylesLocal.lineTop}} />
-        <div style={{...stylesLocal.line,...stylesLocal.lineMiddle}}/>
-        <div style={{...stylesLocal.line,...stylesLocal.lineBottom}} />
+
+      <div className={styles.mobileNavigation}>
+        <motion.nav
+          initial={false}
+          animate={isOpen ? "open" : "closed"}
+          custom={height}
+          ref={containerRef}
+        >
+          <motion.div className={styles.background} variants={sidebar} />
+          <Navigation />
+          <MenuToggle toggle={() => toggleOpen()} />
+        </motion.nav>
       </div>
+      <div onClick={toggleOpen} className={classnames(styles.generalBackground, isOpen ? styles.showBG : null)} />
+
     </header>
   )
 }
