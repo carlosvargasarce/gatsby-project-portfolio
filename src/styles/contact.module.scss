@@ -58,14 +58,55 @@
   }
 
   .container {
-    max-width: 990px;
+    max-width: 660px;
     margin: -10px auto;
-    padding: 80px 20px;
+    padding: 110px 20px 60px;
     width: 100%;
     
     @media screen and (max-width: 480px) {
-      padding: 40px 20px;
+      padding: 50px 20px 30px;
     }
 
+    .contactIntro {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    form {
+      input,
+      textarea {
+        width: 100%;
+        padding: 0 20px;
+        margin-top: 10px;
+        display: block;
+        border: solid 1px $white-dark;
+        outline: none;
+
+        &:focus {
+          border: solid 1px $color-secondary;
+        }
+      }
+
+      input {
+        height: 50px;
+        line-height: 50px;
+      }
+
+      textarea {
+        max-width: 100%;
+        min-height: 150px;
+      }
+
+      button {
+        height: 50px;
+        line-height: 50px;
+        padding: 0 20px;
+        background-color: $color-secondary;
+        color: white;
+        border: 0;
+        text-transform: uppercase;
+        width: 100%;
+      }
+    }
   }
 }

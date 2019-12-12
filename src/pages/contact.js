@@ -26,22 +26,26 @@ export default ({ data }) => {
           <div className={styles.overlay}>
             <div className={styles.bannerContent}>
               <h1>Contact me</h1>
-              <p>If you like to hire me or ask any questions, please fill in the following information.</p>
+              <p>Please fill in the following information.</p>
             </div> 
           </div> 
         </div>
 
         {/* Form */}
         <div className={styles.container}>
+          <p className={styles.contactIntro}>It would be a pleasure to meet you. If you want to hired me or if you have any inquiry, suggestion or petition just let me know. The only thing you have to do is to fill the following information. Let's get in touch!</p>
           <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact/thanks/">
             <p>
-              <label>Your Name: <input type="text" name="name" /></label>   
+              <label>Your Name * <input required type="text" name="name" /></label>   
             </p>
             <p>
-              <label>Your Email: <input type="email" name="email" /></label>
+              <label>Your Email * <input required type="email" name="email" /></label>
             </p>
             <p>
-              <label>Message: <textarea name="message"></textarea></label>
+              <label>Your Phone (optional) <input type="text" name="phone" /></label>
+            </p>
+            <p>
+              <label>Message * <textarea required name="message"></textarea></label>
             </p>
             <p>
               <button type="submit">Send</button>
