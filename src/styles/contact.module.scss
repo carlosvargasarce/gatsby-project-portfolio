@@ -1,8 +1,8 @@
 /* General Variables */
 @import '../components/variables.scss';
 
-/* Blog Styles */
-.blog {
+/* Contact Styles */
+.contact {
   .banner{
     height: 100vh;
     background-size: cover;
@@ -62,74 +62,10 @@
     margin: -10px auto;
     padding: 80px 20px;
     width: 100%;
-    text-align: center;
-
-    @media screen and (max-width: 768px) {
-      padding: 80px 20px 20px;
-    }
-  
+    
     @media screen and (max-width: 480px) {
-      padding: 40px 20px 0;
+      padding: 40px 20px;
     }
 
-    .article {
-      width: calc(50% - 20px);
-      margin: 0 10px 20px;
-      display: inline-block;
-      text-align: left;
-      vertical-align: top;
-
-      @media screen and (max-width: 768px) {
-        width: calc(75% - 20px);
-        margin: 0 auto 40px;
-        border-bottom: 1px solid $white-dark;
-      }
-
-      @media screen and (max-width: 480px) {
-        width: calc(100% - 20px);
-      }
-
-      .link {
-        text-decoration: none;
-      }
-
-      .category {
-        font-weight: bold;
-        color: $color-main;
-        text-transform: uppercase;
-        margin-right: 10px;
-      }
-
-      .date {
-        float: right;
-        color: $grey-light;
-      }
-
-      h3 {
-        color: $black;
-        line-height: 30px;
-      }
-
-      .imageContainer {
-        overflow: hidden;
-        margin-bottom: 20px;
-
-        img {
-          transition: transform 0.3s ease !important;
-        }
-      }
-
-      .excerpt {
-        color: $black;
-      }
-
-      &:hover {
-        .imageContainer {
-          img {
-            transform: scale(1.2) rotate(5deg);
-          }
-        }
-      }
-    }
   }
 }

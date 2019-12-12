@@ -9,6 +9,7 @@
   top: 0;
   padding: 38px 30px;
   z-index: 9;
+  transition: all 0.3s ease;
 
   .logoContainer {
     max-height: 40px;
@@ -64,8 +65,10 @@
       right: 0;
       bottom: 0;
       width: 300px;
-      height: 100vh;
+      height: calc(100vh + 20px);
       z-index: 999;
+      pointer-events: none;
+      transition: 0.3s ease all;
 
       .background {
         position: absolute;
@@ -90,6 +93,7 @@
         height: 50px;
         border-radius: 50%;
         background: transparent;
+        pointer-events: initial;
       }
 
       ul,
@@ -103,6 +107,7 @@
         position: absolute;
         top: 100px;
         width: 100%;
+        pointer-events: none;
       }
 
       li {
@@ -115,6 +120,18 @@
     }
   }
 
+  .mobileNavigationCollapse {
+    nav {
+      top: -20px;
+    }
+  }
+
+  .mobileNavigationOpen {
+    nav {
+      height: calc(100vh + 20px);
+    }
+  }
+    
   .generalBackground {
     width: 100%;
     height: 100vh;
@@ -134,4 +151,10 @@
   .showBG {
     opacity: 1;
   }
+}
+
+/**** Header styles onCollapse ****/
+.headerCollapse {
+  background-color: $black;
+  padding: 17px 30px;
 }

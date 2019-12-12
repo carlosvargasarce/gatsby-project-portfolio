@@ -3,6 +3,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   letter-spacing: 1px;
@@ -10,4 +14,12 @@ body {
 
 h1 {
   font-family: Montserrat, Arial, Helvetica, sans-serif !important;
+}
+
+button {
+  cursor: pointer;
+}
+
+p {
+  line-height: 24px;
 }

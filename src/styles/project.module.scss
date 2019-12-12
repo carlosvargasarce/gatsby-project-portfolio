@@ -1,0 +1,92 @@
+/* General Variables */
+@import '../components/variables.scss';
+
+/* Project Styles */
+.project {
+  .banner{
+    height: 100vh;
+    background-size: cover;
+    background-position: center bottom;
+
+    .overlay {
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      .bannerContent {
+        max-width: 990px;
+        color: white;
+        padding: 0 18px;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        h1 {
+          text-transform: uppercase;
+          font-size: 60px;
+
+          @media screen and (max-width: 992px) {
+            font-size: 50px;
+          }
+
+          @media screen and (max-width: 768px) {
+            font-size: 35px;
+            padding: 0 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .container {
+    max-width: 990px;
+    padding: 80px 20px;
+    width: 100%;
+    margin: 0 auto;
+    
+    .content {
+      .mainTitle {
+        text-transform: uppercase;
+        color: $color-main;
+      }
+
+      .details {
+        font-weight: bold;
+        color: $color-secondary;
+
+        a {
+          font-weight: bold;
+          color: $color-secondary;
+        }
+
+        span {
+          color: $grey-light;
+        }
+      }
+
+      .year {
+        margin-left: 10px;
+        float: right;
+      }
+
+      .tags {
+        margin-bottom: 30px;
+
+        span {
+          display: inline-block;
+          color: white;
+          margin: 0 10px 10px 0;
+          background-color: $color-secondary;
+          border-radius: 10px;
+          padding: 0 10px;
+          font-size: 14px;
+          height: 30px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}
