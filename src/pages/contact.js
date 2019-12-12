@@ -6,7 +6,7 @@ import styles from "../styles/contact.module.scss";
 import { motion } from 'framer-motion';
 
 export default ({ data }) => {
-  const logo = useStaticQuery(graphql`
+  const contact = useStaticQuery(graphql`
     query {
       file(relativePath: {eq: "images/pages/projects-banner.jpg"}) {
         childImageSharp {
@@ -16,54 +16,13 @@ export default ({ data }) => {
           }
         }
       },
-      allMarkdownRemark(
-        sort: {
-          fields: [frontmatter___date],
-          order: DESC,
-        },
-        filter: {
-          frontmatter: {type: {eq: "project"}}
-        }) {
-        totalCount
-        edges {
-          node {
-            id
-            frontmatter {
-              title
-              date(formatString: "YYYY")
-              thumbnail {
-                childImageSharp {
-                  fluid(maxWidth: 800) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-              excerpt
-              category
-              website
-              logo {
-                childImageSharp {
-                  fluid(maxWidth: 200) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-              tags
-            }
-            fields {
-              slug
-            }
-          }
-        }
-      }
     }
   `)
-
 
   return (
     <Layout>
       <div className={styles.contact}>
-        <div className={styles.banner} style={{ backgroundImage: `url(${logo.file.childImageSharp.fluid.src})`}}>
+        <div className={styles.banner} style={{ backgroundImage: `url(${contact.file.childImageSharp.fluid.src})`}}>
           <div className={styles.overlay}>
             <div className={styles.bannerContent}>
               <h1>Contact me</h1>

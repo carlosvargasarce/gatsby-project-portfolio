@@ -46,13 +46,6 @@ export default ({ data }) => {
               excerpt
               category
               website
-              logo {
-                childImageSharp {
-                  fluid(maxWidth: 200) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
               tags
             }
             fields {
