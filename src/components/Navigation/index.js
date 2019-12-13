@@ -26,17 +26,17 @@ const itemIds = [{
 },{
   id: 1,
   text: 'Who',
-  url: '/who'
+  url: '/about'
 },{
   id: 2,
   text: 'Work',
-  url: '/work'
+  url: '/projects'
 },{
   id: 3,
-  text: 'What',
-  url: '/what'
+  text: 'Wlog',
+  url: '/blog'
 },{
   id: 4,
   text: 'Woof',
-  url: '/woof'
+  url: '/contact'
 }];

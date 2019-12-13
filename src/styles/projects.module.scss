@@ -60,20 +60,28 @@
   .container {
     max-width: 990px;
     margin: -10px auto;
-    padding: 80px 20px;
+    padding: 80px 20px 40px;
     width: 100%;
+    text-align: center;
     
-    @media screen and (max-width: 480px) {
-      padding: 40px 20px;
+    @media screen and (max-width: 768px) {
+      padding: 60px 20px 20px;
     }
   
+    @media screen and (max-width: 480px) {
+      padding: 30px 10px 0;
+    }
+    
     .article {
-      width: calc(50% - 20px);
-      margin: 0 10px;
+      width: calc(50% - 40px);
+      margin: 0 20px 20px;
+      display: inline-block;
+      text-align: left;
+      vertical-align: top;
 
       @media screen and (max-width: 768px) {
-        width: calc(75% - 20px);
-        margin: 0 auto;
+        width: calc(75% - 40px);
+        margin: 0 auto 40px;
         border-bottom: 1px solid $white-dark;
       }
 
@@ -124,20 +132,6 @@
           background-color: rgba(0, 0, 0, 0.3);
           top: 0;
           left: 0;
-        }
-      }
-
-      .tags {
-        span {
-          display: inline-block;
-          color: white;
-          margin: 0 10px 10px 0;
-          background-color: $color-main;
-          border-radius: 10px;
-          padding: 0 10px;
-          font-size: 14px;
-          height: 30px;
-          line-height: 30px;
         }
       }
 

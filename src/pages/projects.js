@@ -46,7 +46,6 @@ export default ({ data }) => {
               excerpt
               category
               website
-              tags
             }
             fields {
               slug
@@ -108,11 +107,6 @@ export default ({ data }) => {
                 <h3>
                   <span></span> {node.frontmatter.title}
                 </h3>
-                <div className={styles.tags}>
-                  {node.frontmatter.tags.split(',').map(tag => (
-                    <span>{tag}</span>
-                  ))}
-                </div>
               </Link>
             </div>
           ))}
