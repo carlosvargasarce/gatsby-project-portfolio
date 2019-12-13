@@ -3,6 +3,34 @@
 
 /* Home Styles */
 .home {
+  .mainTitle {
+    margin-bottom: 60px;
+    padding-bottom: 5px;
+    position: relative;
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 40px;
+      margin-bottom: 0;
+
+      @media screen and (max-width: 768px) {
+        font-size: 30px; 
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 4px;
+      width: 150px;
+      bottom: 0;
+      background-color: $color-main;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+
   .intro{
     background: $black;
     background-image: url('../images/layout/background.png');  
@@ -16,6 +44,88 @@
     .imgContainer {
       max-width: 700px;
       flex: 1
+    }
+  }
+
+  .articles {
+    max-width: 1200px;
+    margin: -10px auto;
+    padding: 100px 20px 60px;
+    width: 100%;
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+      padding: 50px 20px 20px;
+    }
+  
+    @media screen and (max-width: 480px) {
+      padding: 50px 0 0;
+    }
+
+    .article {
+      width: calc((100% / 3) - 20px);
+      margin: 0 10px 40px;
+      display: inline-block;
+      text-align: left;
+      vertical-align: top;
+
+      @media screen and (max-width: 992px) {
+        width: calc(50% - 20px);
+        margin: 0 10px 40px;
+      }
+
+      @media screen and (max-width: 768px) {
+        width: calc(75% - 20px);
+        margin: 0 auto 40px;
+        border-bottom: 1px solid $white-dark;
+      }
+
+  
+      @media screen and (max-width: 480px) {
+        width: calc(100% - 40px);
+      }
+
+      .link {
+        text-decoration: none;
+      }
+
+      .category {
+        font-weight: bold;
+        color: $color-main;
+        text-transform: uppercase;
+        margin-right: 10px;
+      }
+
+      .date {
+        float: right;
+        color: $grey-light;
+      }
+
+      h3 {
+        color: $black;
+        line-height: 30px;
+      }
+
+      .imageContainer {
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        img {
+          transition: transform 0.3s ease !important;
+        }
+      }
+
+      .excerpt {
+        color: $black;
+      }
+
+      &:hover {
+        .imageContainer {
+          img {
+            transform: scale(1.2) rotate(5deg);
+          }
+        }
+      }
     }
   }
 }
