@@ -23,7 +23,7 @@ export default ({ children }) => {
         <PageTransition>
           {children}
         </PageTransition>
-      {/*<Footer />*/}
+      <Footer />
     </div>
   )
 }

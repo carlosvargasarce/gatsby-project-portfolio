@@ -67,7 +67,6 @@
       width: 300px;
       height: calc(100vh + 20px);
       z-index: 999;
-      pointer-events: none;
       transition: 0.3s ease all;
 
       .background {
@@ -94,6 +93,7 @@
         border-radius: 50%;
         background: transparent;
         pointer-events: initial;
+        padding: 0;
       }
 
       ul,
@@ -107,7 +107,6 @@
         position: absolute;
         top: 100px;
         width: 100%;
-        pointer-events: none;
       }
 
       li {
@@ -127,6 +126,8 @@
   }
 
   .mobileNavigationOpen {
+    z-index: 9999;
+
     nav {
       height: calc(100vh + 20px);
     }
