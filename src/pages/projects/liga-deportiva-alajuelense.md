@@ -1,5 +1,5 @@
 ---
-title: "Official website of Liga Deportiva Alajuelense"
+title: "Liga Deportiva Alajuelense"
 date: "2018-01-01"
 featuredImage: "../../images/projects/liga-deportiva-alajuelense-banner.jpg"
 thumbnail: "../../images/projects/liga-deportiva-alajuelense-thumbnail.jpg"
@@ -10,6 +10,8 @@ website: "https://lda.cr"
 tags: "Fronted, Web Design, Prototyping, ReactJS"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam accumsan sodales varius. Fusce dictum posuere ex, ut facilisis justo ultrices nec. Quisque pellentesque mauris sit amet vulputate gravida. Suspendisse eleifend libero lacus, nec rutrum sapien porttitor vel.
- 
-Donec faucibus volutpat metus nec rutrum. Pellentesque nec lectus orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus sed ex nibh. Morbi ultricies a nunc ut aliquam. Aliquam ut enim magna. Nunc molestie egestas mi et blandit. Fusce in ex eros.
+Costa Rica Soccer Team, top 10 in CONCACAF. Custom designed website and mobile app to monetize their fan base. Ecommerce includes online merchandizing store and online game ticket’s sales.
+
+I created the User Interface for the website using Sketch and built the frontend of the site with ReactJS. In this project I did the first design version of the mobile app. It had changed a little since the first release. I built it using Proto.io.
+
+This is a big project and we are doing improvements all the time, including the addition of new features.

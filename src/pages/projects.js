@@ -11,7 +11,7 @@ export default ({ data }) => {
 
   const Button = motion.button;
 
-  const logo = useStaticQuery(graphql`
+  const projects = useStaticQuery(graphql`
     query {
       file(relativePath: {eq: "images/pages/projects-banner.jpg"}) {
         childImageSharp {
@@ -60,7 +60,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <div className={styles.projects}>
-        <div className={styles.banner} style={{ backgroundImage: `url(${logo.file.childImageSharp.fluid.src})`}}>
+        <div className={styles.banner} style={{ backgroundImage: `url(${projects.file.childImageSharp.fluid.src})`}}>
           <div className={styles.overlay}>
             <div className={styles.bannerContent}>
               <h1>Projects</h1>
