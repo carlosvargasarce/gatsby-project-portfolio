@@ -1,6 +1,7 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { MenuItem } from "../MenuItem";
+import { FaHome, FaGlasses, FaProjectDiagram, FaNewspaper, FaPhone } from 'react-icons/fa';
 
 const variants = {
   open: {
@@ -22,21 +23,27 @@ export const Navigation = () => (
 const itemIds = [{
   id: 0,
   text: 'Whole',
-  url: '/'
+  url: '/',
+  icon: <FaHome />
 },{
   id: 1,
   text: 'Who',
-  url: '/about'
+  url: '/about',
+  icon: <FaGlasses />
+
 },{
   id: 2,
   text: 'Work',
-  url: '/projects'
+  url: '/projects',
+  icon: <FaProjectDiagram />
 },{
   id: 3,
   text: 'Wlog',
-  url: '/blog'
+  url: '/blog',
+  icon: <FaNewspaper />
 },{
   id: 4,
   text: 'Woof',
-  url: '/contact'
+  url: '/contact',
+  icon: <FaPhone />
 }];

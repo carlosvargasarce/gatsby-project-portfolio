@@ -81,7 +81,7 @@ function Header ({ siteTitle }) {
       </div>
       <nav className={styles.topNavigation}>
         <Link activeClassName={styles.activeLink} to="/">WHOLE</Link>
-        <Link activeClassName={styles.activeLink} to="/who">WHO</Link>
+        <Link activeClassName={styles.activeLink} to="/about">WHO</Link>
         <Link activeClassName={styles.activeLink} to="/projects">WORK</Link>
         <Link activeClassName={styles.activeLink} to="/blog">WLOG</Link>
         <Link activeClassName={styles.activeLink} to="/contact" className={styles.contact}>WOOF</Link>
