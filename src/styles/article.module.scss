@@ -52,6 +52,17 @@
         text-transform: uppercase;
         color: $color-main;
       }
+
+      iframe {
+        display: block;
+        margin: 80px auto;
+      }
+
+      a {
+        font-weight: bold;
+        color: $color-secondary;
+        text-decoration: none;
+      }
     }
   }
 }
