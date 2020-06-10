@@ -1,5 +1,5 @@
 ---
-title: "What is Gatsby?"
+title: "What is Gatsby JS?"
 date: "2019-11-18"
 excerpt: "Gatsby is an open source website framework. It uses great modern technologies such as ReactJS and GraphQL."
 type: "article"
